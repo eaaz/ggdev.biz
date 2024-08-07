@@ -1,0 +1,17 @@
+body.page{
+  &::before{
+    content:"";
+    height: 70px;
+    display: block;
+  }
+  @include media-breakpoint-up(md) {
+    &::before{
+      height: 85px;
+    }
+  }
+  @include media-breakpoint-up(lg) {
+    &::before{
+      height: 150px;
+    }
+  }
+}

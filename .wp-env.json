@@ -1,0 +1,13 @@
+{
+  "core": "https://ja.wordpress.org/latest-ja.zip",
+  "plugins": [
+    "https://downloads.wordpress.org/plugin/wp-phpmyadmin-extension.zip"
+  ],
+  "themes": ["./ggdev-2024"],
+  "phpVersion": "8.0",
+  "config": {},
+  "mappings": {
+    ".htaccess": ".htaccess",
+    "wp-content/uploads": "./uploads"
+  }
+}

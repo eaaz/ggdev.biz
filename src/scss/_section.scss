@@ -1,0 +1,141 @@
+.section {
+  min-height: 100vh;
+  &-header {
+    padding: 0.71rem 0;
+    h2 {
+      text-align: center;
+      margin: 0;
+      .en,
+      .ja {
+        display: block;
+      }
+      .en {
+        line-height: 2.94rem;
+        font-size: 2.35rem;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: bold;
+      }
+      .ja {
+        line-height: 1.76rem;
+        font-size: 0.59rem;
+        font-family: 'Zen Old Mincho', serif;
+      }
+    }
+    @include media-breakpoint-up(sm) { 
+      padding: 2.03rem 0;
+      h2 {
+        .en {
+          line-height: 5.88rem;
+          font-size: 4.71rem;
+        }
+        .ja {
+          line-height: 2.35rem;
+          font-size: 0.94rem;
+        }
+      }
+    }
+    @include media-breakpoint-up(lg) { 
+      padding: 2.35rem 0;
+      h2 {
+        .en {
+          line-height: 7.35rem;
+          font-size: 5.88rem;
+        }
+        .ja {
+          line-height: 2.65rem;
+          font-size: 1rem;
+        }
+      }
+    }
+  }
+  &-about-us {
+    .section-header {
+      background: $white;
+      h2 {
+        .en {
+          color: rgba($primary, 0.5);
+        }
+        .ja {
+          color: $secondary;
+        }
+      }
+    }
+  }
+  &-features {
+    .section-header {
+      background: $white;
+      h2 {
+        .en {
+          color: $fifthly;
+        }
+        .ja {
+          color: $secondary;
+        }
+      }
+    }
+  }
+  &-staffs {
+    .section-header {
+      background: $secondary;
+      h2 {
+        .en {
+          color: rgba($fifthly, 0.25);
+        }
+        .ja {
+          color: $white;
+        }
+      }
+    }
+  }
+  &-qa {
+    .section-header {
+      background: $white;
+      h2 {
+        .en {
+          color: $fifthly;
+        }
+        .ja {
+          color: $secondary;
+        }
+      }
+    }
+  }
+  &-blog-news {
+    background: rgba($sixthly, 0.25);
+    .section-header {
+      h2 {
+        .en {
+          color: $white;
+        }
+        .ja {
+          color: $secondary;
+        }
+      }
+    }
+  }
+  &-recruit {
+    .section-header {
+      h2 {
+        .en {
+          color: $primary;
+        }
+        .ja {
+          color: $secondary;
+        }
+      }
+    }
+  }
+  &-contact {
+    .section-header {
+      background: $white;
+      h2 {
+        .en {
+          color: $fifthly;
+        }
+        .ja {
+          color: $secondary;
+        }
+      }
+    }
+  }
+}

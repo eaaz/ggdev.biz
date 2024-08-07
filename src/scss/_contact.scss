@@ -1,0 +1,16 @@
+.section-contact{
+  overflow: hidden;
+  margin: 0 ;
+  @include media-breakpoint-up(md) {
+    margin: 0 0 4.5rem;
+  }
+  @include media-breakpoint-up(lg) {
+    margin: 0 0 6rem;
+  }
+}
+
+.contact-container{
+  background: rgba($sixthly, 0.25) !important;
+  margin-left: $grid-gutter-width * -0.5;
+  margin-right: $grid-gutter-width * -0.5;
+}

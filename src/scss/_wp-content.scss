@@ -1,0 +1,497 @@
+.wp-content{
+  font-family: 'Zen Old Mincho', serif;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem 0;
+  
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+  }
+  
+  p,
+  ol,
+  ul,
+  dl,
+  dt {
+    letter-spacing: normal;
+  }
+  
+  p,
+  ul,
+  ol,
+  blockquote {
+    line-height: 1.5;
+    margin-bottom: 1.5em;
+  }
+  
+  code,
+  kbd,
+  samp {
+    background: #2b312a;
+  }
+  
+  code,
+  kbd,
+  pre,
+  samp {
+    font-family: monospace;
+    color: inherit;
+    font-size: 15px;
+  }
+  
+  pre {
+    border: 1px solid #f8f9fa;
+    line-height: 1.5;
+    margin: 40px 0;
+    overflow: auto;
+    padding: 30px;
+    text-align: left;
+  }
+  
+  a,
+  a:focus,
+  a:hover {
+    color: #f173ac;
+    text-decoration: underline;
+  }
+  
+  img {
+    height: auto;
+    max-width: 100%;
+  }
+  
+  img[data-wp-more] {
+    height: 16px;
+  }
+  
+  dt {
+    font-weight: 600;
+  }
+  
+  dd {
+    line-height: 1.5;
+  }
+  
+  dd + dt {
+    margin-top: 1.5rem;
+  }
+  
+  
+  /* Font Families ----------------------------- */
+  
+  figcaption,
+  .wp-caption-text,
+  .wp-caption-dd,
+  cite,
+  table {
+    line-height: 1;
+  }
+  
+  @supports ( font-variation-settings: normal ) {
+  
+    figcaption,
+    .wp-caption-text,
+    .wp-caption-dd,
+    cite,
+    table {
+    }
+  }
+  
+  
+  /* Titles ------------------------------------ */
+  
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 1em 0 1.5em;
+  }
+  
+  h1 {
+    font-size: 3rem;
+  }
+  
+  h2 {
+    font-size: 2.5rem;
+  }
+  
+  h3 {
+    font-size: 2rem;
+  }
+  
+  h4 {
+    font-size: 1.75rem;
+  }
+  
+  h5 {
+    font-size: 1.5rem;
+  }
+  
+  h6 {
+    font-size: 1.25rem;
+  }
+  
+  /* Blockquote -------------------------------- */
+  
+  blockquote {
+    border: none;
+    border-left: 2px solid #f8f9fa;
+    margin: 0 0 1.5em 0;
+    padding: 0.5em 0 0.5em 1em;
+  }
+  
+  blockquote p {
+    font-style: normal;
+    font-weight: 400;
+    margin: 0;
+  }
+  
+  cite {
+    color: #f8f9fa;
+    font-size: 1rem;
+    font-weight: 500;
+    font-style: normal;
+  }
+  
+  blockquote cite {
+    display: block;
+    margin-top: 20px;
+  }
+  
+  
+  /* Lists ------------------------------------- */
+  
+  ul {
+    margin-left: 1.5em;
+    padding-left: 0;
+    list-style: disc;
+  }
+  
+  ol {
+    margin-left: 1.5em;
+    padding-left: 0;
+    list-style: decimal;
+  }
+  
+  ul ul {
+    list-style: circle;
+  }
+  
+  ul ul ul {
+    list-style: square;
+  }
+  
+  ol ol {
+    list-style: lower-alpha;
+  }
+  
+  ol ol ol {
+    list-style: lower-roman;
+  }
+  
+  ul ul,
+  ul ol,
+  ol ul,
+  ol ol {
+    margin-bottom: 0;
+  }
+  
+  li {
+    line-height: 1.5;
+    margin-bottom: 0.5em;
+  }
+  
+  ol > li:last-child,
+  ul > li:last-child {
+    margin-bottom: 0;
+  }
+  
+  ol > li:first-child,
+  ul > li:first-child {
+    margin-top: 0.5em;
+  }
+  
+  
+  /* Post Media -------------------------------- */
+  
+  figure,
+  video {
+    display: block;
+    margin: 0;
+  }
+  
+  .wp-caption {
+    margin-bottom: 1.5em;
+  }
+  
+  img.alignleft,
+  .alignleft img,
+  img.aligncenter,
+  .aligncenter img,
+  img.alignright,
+  .alignright img,
+  img.alignnone,
+  .alignnone img {
+    display: block;
+  }
+  
+  .aligncenter,
+  .alignnone,
+  .alignwide,
+  .alignfull {
+    margin: 50px auto;
+  }
+  
+  .alignleft,
+  .alignright {
+    margin-bottom: 25px;
+    max-width: 50%;
+  }
+  
+  .wp-caption img {
+    display: block;
+  }
+  
+  .wp-caption .alignleft,
+  .wp-caption .alignright {
+    margin-bottom: 0;
+  }
+  
+  .alignleft {
+  
+    /*rtl:ignore*/
+    float: left;
+    margin-right: 25px;
+    max-width: 260px;
+  }
+  
+  .alignright {
+  
+    /*rtl:ignore*/
+    float: right;
+    margin-left: 25px;
+    max-width: 260px;
+  }
+  
+  .wpview[data-wpview-type="gallery"] + .wpview[data-wpview-type="gallery"] {
+    margin-top: -34px;
+  }
+  
+  figcaption,
+  .wp-caption-text,
+  .wp-caption-dd,
+  .gallery-caption {
+    color: #6d6d6d;
+    display: block;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin: 18px 0 0;
+  }
+  
+  figcaption a,
+  .wp-caption-text a,
+  .wp-caption-dd a,
+  .gallery-caption a {
+    color: inherit;
+  }
+  
+  
+  /* Tables ------------------------------------ */
+  
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  th,
+  td {
+    line-height: 1.2;
+    margin: 0;
+    overflow: visible;
+    padding: 0.5em;
+  }
+  
+  caption {
+    text-align: center;
+    padding: 0.5em;
+  }
+  
+  thead {
+    vertical-align: bottom;
+    white-space: nowrap;
+  }
+  
+  th {
+    text-align: left;
+  }
+  
+  
+  /* Forms ------------------------------------- */
+  
+  fieldset {
+    border: 2px solid #dcd7ca;
+    padding: 30px;
+  }
+  
+  fieldset legend {
+    font-size: 0.85em;
+    font-weight: 700;
+    padding: 0 15px;
+  }
+  
+  label {
+    display: block;
+    font-size: 15px;
+    font-weight: 600;
+    margin: 0 0 5px 0;
+  }
+  
+  input,
+  textarea {
+    border-color: #dcd7ca;
+    color: inherit;
+    font-family: inherit;
+    font-size: inherit;
+  }
+  
+  input[type="text"],
+  input[type="password"],
+  input[type="email"],
+  input[type="url"],
+  input[type="date"],
+  input[type="month"],
+  input[type="time"],
+  input[type="datetime"],
+  input[type="datetime-local"],
+  input[type="week"],
+  input[type="number"],
+  input[type="search"],
+  input[type="tel"],
+  input[type="color"],
+  textarea {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: transparent;
+    border-radius: 3px;
+    border-style: solid;
+    border-width: 0.1rem;
+    box-shadow: none;
+    display: block;
+    font-size: inherit;
+    font-weight: 400;
+    margin: 0;
+    max-width: 100%;
+    padding: 13.5px 18px;
+    width: 100%;
+    word-break: normal;
+  }
+  
+  textarea {
+    height: 200px;
+    line-height: 1.5;
+    width: 100%;
+  }
+  
+  button,
+  .faux-button,
+  .wp-block-button__link,
+  .wp-block-file__button,
+  input[type="button"],
+  input[type="reset"],
+  input[type="submit"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: #cd2653;
+    border: none;
+    border-radius: 0;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 17px;
+    font-weight: 600;
+    letter-spacing: 0.0333em;
+    line-height: 1.25;
+    margin: 0;
+    padding: 1.1em 1.44em;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+  
+  button:focus,
+  button:hover,
+  .faux-button:hover,
+  .faux-button:focus,
+  .wp-block-button__link:focus,
+  .wp-block-button__link:hover,
+  .wp-block-file__button:focus,
+  .wp-block-file__button:hover,
+  input[type="button"]:focus,
+  input[type="button"]:hover,
+  input[type="reset"]:focus,
+  input[type="reset"]:hover,
+  input[type="submit"]:focus,
+  input[type="submit"]:hover {
+    color: #fff;
+    text-decoration: underline;
+  }
+  
+  .wp-block-button:not(.alignleft):not(.alignright) {
+    margin-bottom: 30px;
+    margin-top: 30px;
+  }
+  
+  /* BUTTON ALIGN: CENTER */
+  
+  .wp-block-button.aligncenter {
+    text-align: center;
+  }
+  
+  /* BUTTON STYLE: OUTLINE */
+  
+  .is-style-outline .wp-block-button__link,
+  .is-style-outline .wp-block-button__link:focus,
+  .is-style-outline .wp-block-button__link:hover {
+    color: #cd2653;
+  }
+  
+  .is-style-outline .wp-block-button__link {
+    background: none;
+    border: 2px solid currentColor;
+    padding: calc(1.1em - 2px) calc(1.44em - 2px);
+  }
+  
+  /* BUTTON STYLE: SQUARED */
+  
+  .is-style-squared .wp-block-button__link {
+    border-radius: 0;
+  }
+  
+  
+  /* Blocks ------------------------------------ */
+  
+  /* BLOCK: HELPER CLASSES */
+  
+  .has-background {
+    padding: 20px;
+  }
+  
+  /* BLOCK: GALLERY */
+  
+  ul.wp-block-gallery {
+    list-style: none;
+    margin-left: 0;
+  }
+  
+  ul.wp-block-gallery li {
+    margin-left: 0;
+  }
+  
+}

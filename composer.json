@@ -1,0 +1,9 @@
+{
+  "require": {},
+  "scripts": {
+    "start": "WP_ENV_PORT=3333 wp-env start",
+    "stop": "wp-env stop",
+    "deploy": "rsync -azhv -e ssh ./tsuki-2022/* dvajp:/home/r4635928/public_html/test.htrk.jp/wp-content/themes/tsuki-2022/",
+    "deploy-production": "rsync -azhv -e ssh ./tsuki-2022/* dvajp:/home/r4635928/public_html/htrk.jp/wp-content/themes/tsuki-2022/"
+  }
+}
