@@ -1,3 +1,121 @@
+$black: #111;
+$green: #00af28;
+$white: #eee;
+
+html {
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: $black;
+  background: $white;
+  letter-spacing: 0.1rem;
+}
+
+header.header {
+  box-sizing: border-box;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: $white;
+  transition: 0.3s;
+  @at-root body:not(.home) & {
+    z-index: 1000;
+    left: -200px;
+    right: auto;
+    bottom: 0;
+    width: 200px;
+    background: $green;
+  }
+  @at-root body.show-menu:not(.home) & {
+    left: 0;
+  }
+  @media screen and (min-width: 960px) {
+    @at-root body:not(.home) & {
+      left: 0;
+    }
+    @at-root body.show-menu:not(.home) & {
+      left: 0;
+    }
+  }
+
+  h1.header-title {
+    padding: 0;
+    margin: 3rem 0;
+    text-align: center;
+    a {
+      color: $green !important;
+      svg {
+        transition: 0.3s;
+      }
+      @at-root body:not(.home) & {
+        color: $white !important;
+      }
+    }
+  }
+
+  nav.header-nav {
+    > div {
+      text-align: center;
+      > ul.menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        > li {
+          padding: 0;
+          margin: 1rem 0;
+          font-size: 1.5rem;
+          line-height: 2;
+          > a {
+            text-decoration: none;
+            color: $black;
+            transition: 0.3s color;
+          }
+        }
+        > li.current-menu-item a,
+        > li a:hover {
+          color: $green;
+          @at-root body:not(.home) & {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
+}
+
+a.toggler {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: $green;
+  color: $white;
+  transition: 0.3s background;
+  svg {
+    width: 40px;
+    height: auto;
+    padding: 16px 5px;
+  }
+  @at-root body.home & {
+    display: none;
+  }
+  @at-root body.show-menu:not(.home) & {
+    z-index: 999;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba($black, 0.25);
+  }
+}
+
 // $primary: #ffa6a8 !default;
 // $secondary: #022c48 !default;
 // $thirdly: #3b5574 !default;
@@ -150,7 +268,7 @@
 //           }
 //         }
 //       }
-//       @include media-breakpoint-up(md) { 
+//       @include media-breakpoint-up(md) {
 //         &-slide{
 //           &-content{
 //             bottom: 100px;
@@ -172,7 +290,7 @@
 //           }
 //         }
 //       }
-//       @include media-breakpoint-up(xl) { 
+//       @include media-breakpoint-up(xl) {
 //         &-slide{
 //           &-content{
 //             bottom: 100px;

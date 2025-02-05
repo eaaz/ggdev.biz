@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="170" height="80" viewBox="0 0 170 80">
+  <g id="logo" transform="translate(-1106.001 490)">
+    <path id="left_g" d="M80,80H20A20,20,0,0,1,0,60V20A20,20,0,0,1,20,0H60A20,20,0,0,1,80,20H20V60H60V50.665H40v-20H60a20,20,0,0,1,20,20V80h0Z" transform="translate(1106.001 -490)" fill="#111" />
+    <path id="right_g" d="M20,80A20,20,0,0,1,0,60V20A20,20,0,0,1,20,0H80V29.335H60V20H20V60H80A20,20,0,0,1,60,80ZM40,49.334v-20H80a20,20,0,0,1-20,20Z" transform="translate(1276.001 -409.998) rotate(180)" fill="currentColor" />
+  </g>
+</svg>

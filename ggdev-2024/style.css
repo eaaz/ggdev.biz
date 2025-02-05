@@ -5,3 +5,118 @@
 * Author: 紅葉琉歌
 * Author URI: https://dva.jp
 */
+html {
+  font-family: "Bebas Neue", serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #111;
+  background: #eee;
+  letter-spacing: 0.1rem;
+}
+
+header.header {
+  box-sizing: border-box;
+  max-height: 100vh;
+  overflow-y: auto;
+  padding: 1rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  background: #eee;
+  transition: 0.3s;
+}
+body:not(.home) header.header {
+  z-index: 1000;
+  left: -200px;
+  right: auto;
+  bottom: 0;
+  width: 200px;
+  background: #00af28;
+}
+
+body.show-menu:not(.home) header.header {
+  left: 0;
+}
+
+@media screen and (min-width: 960px) {
+  body:not(.home) header.header {
+    left: 0;
+  }
+
+  body.show-menu:not(.home) header.header {
+    left: 0;
+  }
+}
+header.header h1.header-title {
+  padding: 0;
+  margin: 3rem 0;
+  text-align: center;
+}
+header.header h1.header-title a {
+  color: #00af28 !important;
+}
+header.header h1.header-title a svg {
+  transition: 0.3s;
+}
+body:not(.home) header.header h1.header-title a {
+  color: #eee !important;
+}
+
+header.header nav.header-nav > div {
+  text-align: center;
+}
+header.header nav.header-nav > div > ul.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+header.header nav.header-nav > div > ul.menu > li {
+  padding: 0;
+  margin: 1rem 0;
+  font-size: 1.5rem;
+  line-height: 2;
+}
+header.header nav.header-nav > div > ul.menu > li > a {
+  text-decoration: none;
+  color: #111;
+  transition: 0.3s color;
+}
+header.header nav.header-nav > div > ul.menu > li.current-menu-item a,
+header.header nav.header-nav > div > ul.menu > li a:hover {
+  color: #00af28;
+}
+body:not(.home) header.header nav.header-nav > div > ul.menu > li.current-menu-item a,
+body:not(.home) header.header nav.header-nav > div > ul.menu > li a:hover {
+  color: #eee;
+}
+
+a.toggler {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: #00af28;
+  color: #eee;
+  transition: 0.3s background;
+}
+a.toggler svg {
+  width: 40px;
+  height: auto;
+  padding: 16px 5px;
+}
+body.home a.toggler {
+  display: none;
+}
+
+body.show-menu:not(.home) a.toggler {
+  z-index: 999;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(17, 17, 17, 0.25);
+}

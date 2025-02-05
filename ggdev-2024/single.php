@@ -7,6 +7,9 @@
   </head>
   <body class="<?= esc_attr(implode(' ', get_body_class())) ?>">
     <header class="header">
+      <h1 class="header-title">
+        <a href="<?= home_url('/') ?>"><?php include('assets/img/logo.svg') ?></a>
+      </h1>
       <nav class="header-nav"><?php wp_nav_menu() ?></nav>
     </header>
     <main class="main"><p>test/single</p></main>
@@ -17,6 +20,7 @@
         GGDEV.BIZ
       </div>
     </footer>
+    <a class="toggler" href="javascript:" data-js-toggler><?php include('assets/img/logo.svg') ?></a>
     <?php wp_footer() ?>
   </body>
 </html>
