@@ -12,7 +12,14 @@
       </h1>
       <nav class="header-nav"><?php wp_nav_menu() ?></nav>
     </header>
-    <main class="main"><p>test/404</p></main>
+    <main class="main">
+      <div class="thumbnail no-image"></div>
+      <div class="content-title">404</div>
+      <div class="content">
+        <div class="content-404">お探しのページが見つかりませんでした。変更されたか削除された可能性があります。</div>
+        <div class="content-back"><a class="btn" href="<?= home_url('/') ?>">BACK</a></div>
+      </div>
+    </main>
     <footer class="footer">
       <div class="footer-copy">
         (C)

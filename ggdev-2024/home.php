@@ -13,26 +13,22 @@
       <nav class="header-nav"><?php wp_nav_menu() ?></nav>
     </header>
     <main class="main">
-      <?php if (has_post_thumbnail()): ?>
-      <div class="thumbnail"><?php the_post_thumbnail() ?></div>
-      <?php else: ?>
       <div class="thumbnail no-image"></div>
-      <?php endif ?>
-      <div class="content-title"><?php the_title() ?></div>
+      <div class="content-title">BLOG</div>
       <div class="content">
-        <div class="content-wp"><?php the_content() ?></div>
-        <div class="content-nextprev">
-          <?php if ($previous_post_link = get_previous_post_link('%link', 'PREV')): ?>
-          <?= $previous_post_link ?>
-          <?php else: ?>
-          <span>PREV</span>
-          <?php endif ?>
-          <?php if ($next_post_link = get_next_post_link('%link', 'NEXT')): ?>
-          <?= $next_post_link ?>
-          <?php else: ?>
-          <span>NEXT</span>
-          <?php endif ?>
+        <div class="content-paginate"><?php echo paginate_links('prev_next=0') ?></div>
+        <div class="content-list">
+          <?php while(have_posts()): the_post() ?>
+          <div class="content-list-item">
+            <div class="content-list-item-title">
+              <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+            </div>
+            <div class="content-list-item-excerpt"><?php the_excerpt() ?></div>
+            <div class="content-list-item-data"><?php the_time('Y/m/d') ?></div>
+          </div>
+          <?php endwhile ?>
         </div>
+        <div class="content-paginate"><?php echo paginate_links('prev_next=0') ?></div>
         <div class="content-back"><a class="btn" href="<?= home_url('/') ?>">BACK</a></div>
       </div>
     </main>

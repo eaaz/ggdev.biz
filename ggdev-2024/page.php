@@ -13,10 +13,16 @@
       <nav class="header-nav"><?php wp_nav_menu() ?></nav>
     </header>
     <main class="main">
-      <p>
-        test/page
-        <?php the_title() ?>
-      </p>
+      <?php if (has_post_thumbnail()): ?>
+      <div class="thumbnail"><?php the_post_thumbnail() ?></div>
+      <?php else: ?>
+      <div class="thumbnail no-image"></div>
+      <?php endif ?>
+      <div class="content-title"><?php the_title() ?></div>
+      <div class="content">
+        <div class="content-wp"><?php the_content() ?></div>
+        <div class="content-back"><a class="btn" href="<?= home_url('/') ?>">BACK</a></div>
+      </div>
     </main>
     <footer class="footer">
       <div class="footer-copy">

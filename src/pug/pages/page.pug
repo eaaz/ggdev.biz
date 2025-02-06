@@ -1,4 +1,13 @@
 extends ../layouts/default.pug
 
 block content
-  p test/page <?php the_title() ?>
+  <?php if (has_post_thumbnail()): ?>
+  .thumbnail <?php the_post_thumbnail() ?>
+  <?php else: ?>
+  .thumbnail.no-image
+  <?php endif ?>
+  .content-title <?php the_title() ?>
+  .content
+    .content-wp <?php the_content() ?>
+    .content-back
+      a.btn(href!="<?= home_url('/') ?>") BACK

@@ -1,4 +1,24 @@
 extends ../layouts/default.pug
 
 block content
-  p test/single
+  <?php if (has_post_thumbnail()): ?>
+  .thumbnail <?php the_post_thumbnail() ?>
+  <?php else: ?>
+  .thumbnail.no-image
+  <?php endif ?>
+  .content-title <?php the_title() ?>
+  .content
+    .content-wp <?php the_content() ?>
+    .content-nextprev
+      <?php if ($previous_post_link = get_previous_post_link('%link', 'PREV')): ?>
+      <?= $previous_post_link ?>
+      <?php else: ?>
+      span PREV
+      <?php endif ?>
+      <?php if ($next_post_link = get_next_post_link('%link', 'NEXT')): ?>
+      <?= $next_post_link ?>
+      <?php else: ?>
+      span NEXT
+      <?php endif ?>
+    .content-back
+      a.btn(href!="<?= home_url('/') ?>") BACK

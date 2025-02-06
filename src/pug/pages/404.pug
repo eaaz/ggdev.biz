@@ -1,4 +1,9 @@
 extends ../layouts/default.pug
 
 block content
-  p test/404
+  .thumbnail.no-image
+  .content-title 404
+  .content
+    .content-404 お探しのページが見つかりませんでした。変更されたか削除された可能性があります。
+    .content-back
+      a.btn(href!="<?= home_url('/') ?>") BACK

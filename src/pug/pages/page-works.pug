@@ -1,0 +1,34 @@
+extends ../layouts/default.pug
+
+block content
+  <?php if (has_post_thumbnail()): ?>
+  .thumbnail <?php the_post_thumbnail() ?>
+  <?php else: ?>
+  .thumbnail.no-image
+  <?php endif ?>
+  .content-title <?php the_title() ?>
+
+  <?php if (!is_user_logged_in()): ?>
+  .content
+    .content-wp 
+      p このページを見るには、メールアドレスとパスワードでログインしてください。パスワードを発行するには「NDA」にご同意の上、お問い合わせください。
+    form.form(method="POST" action!="<?= esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>")
+      .form-control 
+        label.form-control-label メールアドレス
+        .form-control-input
+          input.input(type="email" name="log")
+      .form-control 
+        label.form-control-label パスワード
+        .form-control-input
+          input.input(type="password" name="pwd")
+      .form-submit 
+        input(type="hidden" name="redirect_to" value!="<?= get_the_permalink() ?>")
+        button.btn(type="submit") ENTER
+    .content-back
+      a.btn(href!="<?= home_url('/') ?>") BACK
+  <?php else: ?>
+  .content
+    .content-wp <?php the_content() ?>
+    .content-back
+      a.btn(href!="<?= home_url('/') ?>") BACK
+  <?php endif ?>

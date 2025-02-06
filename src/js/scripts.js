@@ -15,6 +15,7 @@
         }
       });
   };
+
   const setStyleIds = function () {
     $(document)
       .find("head > *")
@@ -98,7 +99,7 @@
 
   $(document).on("click", "a", function (e) {
     const href = $(this).prop("href");
-    if (href.match(window.location.host)) {
+    if (href.match(window.location.host) && !href.match("wp-admin")) {
       e.preventDefault();
       return ajaxLink(href);
     }

@@ -6,12 +6,47 @@
 * Author URI: https://dva.jp
 */
 html {
-  font-family: "Bebas Neue", serif;
+  font-family: "Bebas Neue", "Noto Sans JP", serif;
   font-weight: 400;
   font-style: normal;
+  font-optical-sizing: auto;
   color: #111;
   background: #eee;
   letter-spacing: 0.1rem;
+}
+html .btn, html main.main .content-nextprev > a, main.main html .content-nextprev > a,
+html main.main .content-nextprev > span,
+main.main html .content-nextprev > span, html main.main .content-paginate a, main.main .content-paginate html a,
+html main.main .content-paginate span,
+main.main .content-paginate html span {
+  min-width: 10rem;
+  text-align: center;
+  display: inline-block;
+  padding: 1rem;
+  background: #00af28;
+  border: 2px solid #00af28;
+  color: #eee;
+  font-weight: bold;
+  text-decoration: none;
+  transition: 0.3s;
+  box-sizing: border-box;
+  letter-spacing: 0.1rem;
+}
+html .btn:hover, html main.main .content-nextprev > a:hover, main.main html .content-nextprev > a:hover,
+html main.main .content-nextprev > span:hover,
+main.main html .content-nextprev > span:hover, html main.main .content-paginate a:hover, main.main .content-paginate html a:hover,
+html main.main .content-paginate span:hover,
+main.main .content-paginate html span:hover {
+  opacity: 0.75;
+}
+html .input {
+  display: block;
+  padding: 1rem;
+  background: ligten(#eee, 10%);
+  color: #111;
+  font-weight: bold;
+  text-decoration: none;
+  border: 2px solid #00af28;
 }
 
 header.header {
@@ -42,6 +77,9 @@ body.show-menu:not(.home) header.header {
 }
 
 @media screen and (min-width: 960px) {
+  header.header {
+    padding: 3rem 1rem;
+  }
   body:not(.home) header.header {
     left: 0;
   }
@@ -63,6 +101,10 @@ header.header h1.header-title a svg {
 }
 body:not(.home) header.header h1.header-title a {
   color: #eee !important;
+}
+body:not(.home) header.header h1.header-title a svg {
+  width: 127.5px;
+  height: 60px;
 }
 
 header.header nav.header-nav > div {
@@ -93,8 +135,218 @@ body:not(.home) header.header nav.header-nav > div > ul.menu > li a:hover {
   color: #eee;
 }
 
+main.main {
+  box-sizing: border-box;
+  max-width: 800px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 960px) {
+  main.main {
+    margin-left: 200px;
+  }
+}
+body.home main.main {
+  display: none;
+}
+
+main.main .thumbnail {
+  line-height: 0 !important;
+  max-width: 100%;
+}
+main.main .thumbnail img {
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 4/3;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+main.main .thumbnail.no-image {
+  aspect-ratio: 4/3;
+  background: url(assets/img/gg_img01.jpg) center center no-repeat;
+  background-size: cover;
+}
+@media screen and (min-width: 960px) {
+  main.main .thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+  }
+  main.main .thumbnail img {
+    height: 100%;
+    aspect-ratio: none;
+  }
+  main.main .thumbnail:after {
+    content: "";
+    display: block;
+    background: rgba(238, 238, 238, 0.8);
+    position: absolute;
+    width: 800px;
+    height: 100%;
+    top: 0;
+    left: 200px;
+  }
+}
+main.main .content-title {
+  position: relative;
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4/3;
+  box-sizing: border-box;
+  font-size: 2rem;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -75vw;
+  background: rgba(238, 238, 238, 0.5);
+}
+@media screen and (min-width: 960px) {
+  main.main .content-title {
+    aspect-ratio: auto;
+    background: none;
+    font-size: 3rem;
+    padding: 5rem 3rem;
+    margin-top: 0;
+  }
+}
+main.main .content {
+  box-sizing: border-box;
+  padding: 1.5rem;
+}
+@media screen and (min-width: 960px) {
+  main.main .content {
+    position: relative;
+    padding: 3rem;
+  }
+}
+main.main .content-paginate {
+  margin: 1rem 0;
+}
+main.main .content-paginate a,
+main.main .content-paginate span {
+  text-decoration: none;
+  min-width: auto !important;
+}
+main.main .content-paginate a {
+  color: #00af28;
+}
+main.main .content-paginate span.current {
+  color: rgba(17, 17, 17, 0.75);
+}
+main.main .content-list {
+  margin: 0 -1.5rem;
+  border-top: 1px solid rgba(17, 17, 17, 0.25);
+}
+main.main .content-list-item {
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  border-bottom: 1px solid rgba(17, 17, 17, 0.25);
+}
+main.main .content-list-item-title {
+  font-size: 1.5rem;
+  line-height: 2em;
+}
+main.main .content-list-item-title a {
+  color: #111;
+}
+main.main .content-list-item-title a:hover {
+  color: #00af28;
+  text-decoration: none;
+}
+main.main .content-list-item-excerpt {
+  font-size: 0.8rem;
+  line-height: 1.5em;
+  color: rgba(17, 17, 17, 0.75);
+}
+main.main .content-list-item-excerpt p {
+  margin: 0;
+}
+main.main .content-list-item-data {
+  font-size: 0.8rem;
+  line-height: 1.5em;
+  color: rgba(17, 17, 17, 0.75);
+  text-align: right;
+}
+@media screen and (min-width: 960px) {
+  main.main .content-list {
+    margin: 0 -3rem;
+  }
+  main.main .content-list-item {
+    padding: 1.5rem 3rem;
+  }
+}
+main.main .content-404 {
+  text-align: center;
+  line-height: 2;
+}
+main.main .form-control {
+  margin: 0 0 1rem;
+}
+main.main .form-control-label {
+  margin: 0.5rem 0;
+  display: block;
+}
+main.main .form-control-input input {
+  box-sizing: border-box;
+  width: 100%;
+}
+main.main .form-submit {
+  text-align: center;
+}
+main.main .form-submit button {
+  margin: 0 auto;
+}
+@media screen and (min-width: 960px) {
+  main.main .form-control {
+    display: flex;
+  }
+  main.main .form-control-label {
+    margin: 1.2rem 0;
+  }
+  main.main .form-control-label, main.main .form-control-input {
+    flex-basis: 50%;
+  }
+}
+main.main .content-nextprev {
+  display: flex;
+  justify-content: space-between;
+  margin: 1.5rem 0;
+}
+main.main .content-nextprev span {
+  background: rgba(17, 17, 17, 0.25) !important;
+  border-color: transparent !important;
+}
+main.main .content-nextprev span:hover {
+  opacity: 1 !important;
+}
+main.main .content-back {
+  display: flex;
+  justify-content: center;
+  margin: 1.5rem 0;
+}
+
+footer.footer {
+  box-sizing: border-box;
+  margin: 3rem auto;
+  text-align: center;
+  position: relative;
+}
+@media screen and (min-width: 960px) {
+  footer.footer {
+    margin-left: 200px;
+    max-width: 800px;
+  }
+}
+body.home footer.footer {
+  display: none;
+}
+
 a.toggler {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   width: 50px;
