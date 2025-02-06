@@ -167,7 +167,7 @@ main.main .thumbnail.no-image {
 }
 @media screen and (min-width: 960px) {
   main.main .thumbnail {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
@@ -203,6 +203,11 @@ main.main .content-title {
   margin-top: -75vw;
   background: rgba(238, 238, 238, 0.5);
 }
+@media screen and (min-width: 800px) {
+  main.main .content-title {
+    margin-top: -600px;
+  }
+}
 @media screen and (min-width: 960px) {
   main.main .content-title {
     aspect-ratio: auto;
@@ -219,8 +224,45 @@ main.main .content {
 @media screen and (min-width: 960px) {
   main.main .content {
     position: relative;
-    padding: 3rem;
+    padding: 0 3rem 3rem;
   }
+}
+main.main .content-wp h1 {
+  font-size: 2rem;
+}
+main.main .content-wp h2 {
+  font-size: 1.75rem;
+}
+main.main .content-wp h3 {
+  font-size: 1.66rem;
+}
+main.main .content-wp h4 {
+  font-size: 1.5rem;
+}
+main.main .content-wp h5 {
+  font-size: 1.33rem;
+}
+main.main .content-wp h6 {
+  font-size: 1.25rem;
+}
+main.main .content-wp p {
+  font-size: 1rem;
+}
+main.main .content-wp h1,
+main.main .content-wp h2,
+main.main .content-wp h3,
+main.main .content-wp h4,
+main.main .content-wp h5,
+main.main .content-wp h6,
+main.main .content-wp p {
+  line-height: 1.75;
+  margin: 1rem 0;
+}
+main.main .content-wp img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 1rem auto;
 }
 main.main .content-paginate {
   margin: 1rem 0;
@@ -290,6 +332,7 @@ main.main .form-control-label {
   margin: 0.5rem 0;
   display: block;
 }
+main.main .form-control-input textarea,
 main.main .form-control-input input {
   box-sizing: border-box;
   width: 100%;

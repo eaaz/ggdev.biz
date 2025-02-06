@@ -152,7 +152,7 @@ main.main {
       background-size: cover;
     }
     @media screen and (min-width: 960px) {
-      position: absolute;
+      position: fixed;
       top: 0;
       left: 0;
       right: 0;
@@ -188,6 +188,9 @@ main.main {
     align-items: center;
     margin-top: -75vw;
     background: rgba($white, 0.5);
+    @media screen and (min-width: 800px) {
+      margin-top: -600px;
+    }
     @media screen and (min-width: 960px) {
       aspect-ratio: auto;
       background: none;
@@ -201,13 +204,49 @@ main.main {
     box-sizing: border-box;
     padding: 1.5rem;
     @media screen and (min-width: 960px) {
-      // min-height: calc(100vh - 100px);
-      // background: rgba($white, 0.8);
       position: relative;
-      padding: 3rem;
+      padding: 0 3rem 3rem;
     }
   }
-
+  .content-wp {
+    h1 {
+      font-size: 2rem;
+    }
+    h2 {
+      font-size: 1.75rem;
+    }
+    h3 {
+      font-size: 1.66rem;
+    }
+    h4 {
+      font-size: 1.5rem;
+    }
+    h5 {
+      font-size: 1.33rem;
+    }
+    h6 {
+      font-size: 1.25rem;
+    }
+    p {
+      font-size: 1rem;
+    }
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p {
+      line-height: 1.75;
+      margin: 1rem 0;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1rem auto;
+    }
+  }
   .content-paginate {
     margin: 1rem 0;
     a,
@@ -276,6 +315,7 @@ main.main {
         display: block;
       }
       &-input {
+        textarea,
         input {
           box-sizing: border-box;
           width: 100%;

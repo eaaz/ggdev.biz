@@ -18,7 +18,9 @@ add_action('after_setup_theme', 'theme_setup');
 add_action('wp_enqueue_scripts', 'my_load_scripts');
 function disable_rest_api()
 {
-  return new WP_Error('disabled', __('REST API is disabled.'), array('status' => rest_authorization_required_code()));
+  if (!is_user_logged_in()) {
+    return new WP_Error('disabled', __('REST API is disabled.'), array('status' => rest_authorization_required_code()));
+  }
 }
 add_filter('rest_authentication_errors', 'disable_rest_api');
 function itsme_disable_feed()
@@ -34,3 +36,32 @@ add_action('do_feed_rss2', 'itsme_disable_feed', 1);
 add_action('do_feed_atom', 'itsme_disable_feed', 1);
 add_action('do_feed_rss2_comments', 'itsme_disable_feed', 1);
 add_action('do_feed_atom_comments', 'itsme_disable_feed', 1);
+add_action('wp', function () {
+  global $post;
+  if ($post && $post->post_name === 'contact' && isset($_POST['_wpnonce'])) {
+    if (!wp_verify_nonce($_POST['_wpnonce'], -1)) {
+      wp_die('お問い合わせのメール送信に失敗しました。');
+    };
+
+    $to = get_option('admin_email');
+    $subject = 'お問い合わせメール';
+    $message = '';
+    foreach (
+      [
+        'email' => 'メールアドレス',
+        'fullname' => '氏名',
+        'subject' => '件名',
+        'message' => '内容',
+      ] as $key => $label
+    ) {
+      $message .= $label . '　：' . (string)@$_POST[$key] . "\n";
+      $message .= "\n";
+    }
+
+    if (!wp_mail($to, $subject, $message)) {
+      wp_die('お問い合わせのメール送信に失敗しました。');
+    }
+
+    return wp_redirect(home_url('/contact?thanks=1'));
+  }
+});

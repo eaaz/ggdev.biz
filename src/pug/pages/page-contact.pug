@@ -1,0 +1,38 @@
+extends ../layouts/default.pug
+
+block content
+  <?php if (has_post_thumbnail()): ?>
+  .thumbnail <?php the_post_thumbnail() ?>
+  <?php else: ?>
+  .thumbnail.no-image
+  <?php endif ?>
+  .content-title <?php the_title() ?>
+
+  .content
+    .content-wp <?php the_content() ?>
+    <?php if (@$_GET['thanks']): ?>
+    p お問い合わせメールを送信しました。１週間以内を目処に返信させていただきます。<br />しばらくお待ちくださいませ。
+    <?php else: ?>
+    form.form(method="POST" action="/contact")
+      .form-control 
+        label.form-control-label メールアドレス
+        .form-control-input
+          input.input(type="email" name="email")
+      .form-control 
+        label.form-control-label 氏名
+        .form-control-input
+          input.input(type="text" name="fullname")
+      .form-control 
+        label.form-control-label 件名
+        .form-control-input
+          input.input(type="text" name="subject")
+      .form-control 
+        label.form-control-label 内容
+        .form-control-input
+          textarea.input(rows="10" name="message")
+      .form-submit 
+        <?php wp_nonce_field() ?>
+        button.btn(type="submit") SUBMIT
+    <?php endif ?>
+    .content-back
+      a.btn(href!="<?= home_url('/') ?>") BACK
