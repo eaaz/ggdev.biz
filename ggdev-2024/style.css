@@ -81,10 +81,12 @@ body.show-menu:not(.home) header.header {
     padding: 3rem 1rem;
   }
   body:not(.home) header.header {
+    padding: 1rem;
     left: 0;
   }
 
   body.show-menu:not(.home) header.header {
+    padding: 1rem;
     left: 0;
   }
 }
@@ -263,6 +265,9 @@ main.main .content-wp img {
   max-width: 100%;
   height: auto;
   margin: 1rem auto;
+}
+main.main .content-wp a {
+  color: #00af28;
 }
 main.main .content-paginate {
   margin: 1rem 0;

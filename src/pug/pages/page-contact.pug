@@ -11,7 +11,8 @@ block content
   .content
     .content-wp <?php the_content() ?>
     <?php if (@$_GET['thanks']): ?>
-    p お問い合わせメールを送信しました。１週間以内を目処に返信させていただきます。<br />しばらくお待ちくださいませ。
+    .content-wp 
+      p お問い合わせメールを送信しました。１週間以内を目処に返信させていただきます。<br />しばらくお待ちくださいませ。
     <?php else: ?>
     form.form(method="POST" action="/contact")
       .form-control 

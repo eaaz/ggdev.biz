@@ -11,7 +11,7 @@ block content
   <?php if (!is_user_logged_in()): ?>
   .content
     .content-wp 
-      p このページを見るには、メールアドレスとパスワードでログインしてください。パスワードを発行するには「NDA」にご同意の上、お問い合わせください。
+      p このページを見るには、メールアドレスとパスワードでログインしてください。パスワードを発行するには、一度<a href="<?= home_url('/contact') ?>">お問い合わせ</a>ください。
     form.form(method="POST" action!="<?= esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>")
       .form-control 
         label.form-control-label メールアドレス

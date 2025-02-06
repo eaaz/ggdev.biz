@@ -21,7 +21,13 @@
       <div class="content-title"><?php the_title() ?></div>
       <?php if (!is_user_logged_in()): ?>
       <div class="content">
-        <div class="content-wp"><p>このページを見るには、メールアドレスとパスワードでログインしてください。パスワードを発行するには「NDA」にご同意の上、お問い合わせください。</p></div>
+        <div class="content-wp">
+          <p>
+            このページを見るには、メールアドレスとパスワードでログインしてください。パスワードを発行するには、一度
+            <a href="<?= home_url('/contact') ?>">お問い合わせ</a>
+            ください。
+          </p>
+        </div>
         <form class="form" method="POST" action="<?= esc_url( site_url( 'wp-login.php', 'login_post' ) ); ?>">
           <div class="form-control">
             <label class="form-control-label">メールアドレス</label>

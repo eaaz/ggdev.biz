@@ -22,11 +22,13 @@
       <div class="content">
         <div class="content-wp"><?php the_content() ?></div>
         <?php if (@$_GET['thanks']): ?>
-        <p>
-          お問い合わせメールを送信しました。１週間以内を目処に返信させていただきます。
-          <br />
-          しばらくお待ちくださいませ。
-        </p>
+        <div class="content-wp">
+          <p>
+            お問い合わせメールを送信しました。１週間以内を目処に返信させていただきます。
+            <br />
+            しばらくお待ちくださいませ。
+          </p>
+        </div>
         <?php else: ?>
         <form class="form" method="POST" action="/contact">
           <div class="form-control">

@@ -71,9 +71,11 @@ header.header {
   @media screen and (min-width: 960px) {
     padding: 3rem 1rem;
     @at-root body:not(.home) & {
+      padding: 1rem;
       left: 0;
     }
     @at-root body.show-menu:not(.home) & {
+      padding: 1rem;
       left: 0;
     }
   }
@@ -245,6 +247,9 @@ main.main {
       max-width: 100%;
       height: auto;
       margin: 1rem auto;
+    }
+    a {
+      color: $green;
     }
   }
   .content-paginate {
