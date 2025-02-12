@@ -103,7 +103,12 @@
 
   $(document).on("click", "a", function (e) {
     const href = $(this).prop("href");
-    if (href.match(window.location.host) && !href.match("wp-admin")) {
+    const target = $(this).prop("target");
+    if (
+      href.match(window.location.host) &&
+      !href.match("wp-admin") &&
+      target !== "_blank"
+    ) {
       e.preventDefault();
       return ajaxLink(href);
     }
