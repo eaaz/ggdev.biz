@@ -6,14 +6,6 @@ const sh = require("shelljs");
 const { wpTheme } = require("./config");
 
 module.exports = function renderScripts() {
-  const sourcePath = upath.resolve(upath.dirname(__filename), "../src/js");
-  const destPath = upath.resolve(
-    upath.dirname(__filename),
-    "../" + wpTheme + "/."
-  );
-
-  sh.cp("-R", sourcePath, destPath);
-
   const sourcePathScriptsJS = upath.resolve(
     upath.dirname(__filename),
     "../src/js/scripts.js"
@@ -23,11 +15,11 @@ module.exports = function renderScripts() {
     "../" + wpTheme + "/scripts.js"
   );
 
-  const copyright = `/*!
+  const copyright = `  /*!
   * Wordpress Theme - ${packageJSON.title} v${packageJSON.version} (${
     packageJSON.homepage
   })
-  * Copyright 2021-${new Date().getFullYear()} ${packageJSON.author}
+  * Copyright 2024-${new Date().getFullYear()} ${packageJSON.author}
   */
   `;
   const scriptsJS = fs.readFileSync(sourcePathScriptsJS);
